@@ -1,6 +1,5 @@
 import requests
 import re #Regular Expression
-import json #To preprint the extracted data
 import csv #To store the output in the csv file
 
 def extract_emails(text):
