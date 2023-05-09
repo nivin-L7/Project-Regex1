@@ -28,14 +28,26 @@ def main():
 	#print the extracted and validated data
 
 	print("Valid Email Addresses:", valid_emails)
-	#for email in valid_emails:
-		#return email
+	
 
 	
 	print("\nValid phone numbers:",valid_phone_numbers)
-	#for phone_number in valid_phone_numbers:
-		#return phone_number
+	
+	contacts={'valid emails':', '.join(valid_emails),
+		  'valid phones':', '.join(valid_phone_numbers)
+			  }
+	
+	print(contacts)
 
+	#store data to csv file
+	with open('contacts.csv', 'a') as f:
+		#create csv writer
+		writer=csv.DictWriter(f,fieldnames=contacts.keys())
+
+		#append row to the csv
+
+		writer.writerow(contacts)
+	
 
 if __name__=='__main__':
 	main()
